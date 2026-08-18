@@ -1,0 +1,53 @@
+<%
+// Expected variables: product
+%>
+<div class="product-card">
+  <div class="product-image-wrapper">
+    <a href="#">
+      <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image" loading="lazy">
+    </a>
+    <% if (product.badge) { %>
+      <span class="product-badge"><%= product.badge %></span>
+    <% } %>
+    <% if (product.discount) { %>
+      <span class="product-discount">-<%= product.discount %>%</span>
+    <% } %>
+    <button class="wishlist-btn" aria-label="Add to wishlist">
+      <i class="bi bi-heart"></i>
+    </button>
+    <div class="product-actions">
+      <button class="quick-view-btn" aria-label="Quick view">
+        <i class="bi bi-eye"></i>
+      </button>
+    </div>
+  </div>
+  <div class="product-info">
+    <span class="product-category"><%= product.category %></span>
+    <h3 class="product-name">
+      <a href="#"><%= product.name %></a>
+    </h3>
+    <div class="product-rating">
+      <div class="stars">
+        <% for (let i = 1; i <= 5; i++) { %>
+          <% if (i <= Math.floor(product.rating)) { %>
+            <i class="bi bi-star-fill"></i>
+          <% } else if (i - 0.5 <= product.rating) { %>
+            <i class="bi bi-star-half"></i>
+          <% } else { %>
+            <i class="bi bi-star"></i>
+          <% } %>
+        <% } %>
+      </div>
+      <span class="review-count">(<%= product.reviews %>)</span>
+    </div>
+    <div class="product-pricing">
+      <span class="current-price">₹<%= product.price.toLocaleString('en-IN') %></span>
+      <% if (product.oldPrice) { %>
+        <span class="old-price">₹<%= product.oldPrice.toLocaleString('en-IN') %></span>
+      <% } %>
+    </div>
+    <button class="add-to-cart-btn">
+      <i class="bi bi-bag-plus"></i> Add to Cart
+    </button>
+  </div>
+</div>

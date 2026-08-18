@@ -1,0 +1,480 @@
+<%- include('partials/header') %>
+     <%- include('partials/navbar') %>
+
+          <main style="overflow-x: hidden;">
+               <!-- ========== HERO SLIDER ========== -->
+               <section class="hero-section" aria-label="Hero Slider">
+                    <div class="swiper hero-swiper">
+                         <div class="swiper-wrapper">
+                              <!-- Slide 1 - hero content is always visible via JS, no AOS needed -->
+                              <div class="swiper-slide hero-slide"
+                                   style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600&h=800&fit=crop');">
+                                   <div class="hero-overlay"></div>
+                                   <div class="container">
+                                        <div class="hero-content">
+                                             <span class="hero-tag">Premium Sofa Covers</span>
+                                             <h1 class="hero-title">Beautiful Homes Begin<br>With The Right Details</h1>
+                                             <p class="hero-subtitle">Premium sofa covers, carpets and home furnishing
+                                                  essentials designed to make every space feel special.</p>
+                                             <div class="hero-buttons">
+                                                  <a href="#" class="btn btn-hero-primary">SHOP COLLECTION</a>
+                                                  <a href="#" class="btn btn-hero-secondary">EXPLORE CARPETS</a>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <!-- Slide 2 -->
+                              <div class="swiper-slide hero-slide"
+                                   style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&h=800&fit=crop');">
+                                   <div class="hero-overlay"></div>
+                                   <div class="container">
+                                        <div class="hero-content">
+                                             <span class="hero-tag">Luxury Carpets</span>
+                                             <h2 class="hero-title">Transform Your Floors<br>Into Art</h2>
+                                             <p class="hero-subtitle">Discover our exquisite range of carpets that bring
+                                                  warmth, texture and elegance to every room.</p>
+                                             <div class="hero-buttons">
+                                                  <a href="#" class="btn btn-hero-primary">SHOP CARPETS</a>
+                                                  <a href="#" class="btn btn-hero-secondary">VIEW ALL</a>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <!-- Slide 3 -->
+                              <div class="swiper-slide hero-slide"
+                                   style="background-image: url('https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1600&h=800&fit=crop');">
+                                   <div class="hero-overlay"></div>
+                                   <div class="container">
+                                        <div class="hero-content">
+                                             <span class="hero-tag">Table Collection</span>
+                                             <h2 class="hero-title">Set The Table<br>Beautifully</h2>
+                                             <p class="hero-subtitle">Elegant table covers and runners crafted to add
+                                                  sophistication to your dining experience.</p>
+                                             <div class="hero-buttons">
+                                                  <a href="#" class="btn btn-hero-primary">TABLE COLLECTION</a>
+                                                  <a href="#" class="btn btn-hero-secondary">NEW ARRIVALS</a>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <!-- Slide 4 -->
+                              <div class="swiper-slide hero-slide"
+                                   style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&h=800&fit=crop');">
+                                   <div class="hero-overlay"></div>
+                                   <div class="container">
+                                        <div class="hero-content">
+                                             <span class="hero-tag">7D Home Carpets</span>
+                                             <h2 class="hero-title">Experience The Magic<br>Of 7D Carpets</h2>
+                                             <p class="hero-subtitle">Ultra-realistic 3D designs that bring depth and
+                                                  dimension to your living spaces.</p>
+                                             <div class="hero-buttons">
+                                                  <a href="#" class="btn btn-hero-primary">EXPLORE 7D CARPETS</a>
+                                                  <a href="#" class="btn btn-hero-secondary">LEARN MORE</a>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="swiper-pagination hero-pagination"></div>
+                         <div class="swiper-button-next hero-nav"></div>
+                         <div class="swiper-button-prev hero-nav"></div>
+                    </div>
+               </section>
+
+               <!-- ========== SHOP BY CATEGORY ========== -->
+               <section class="section-categories" aria-label="Shop by Category">
+                    <div class="container">
+                         <div class="section-header text-center" data-aos="fade-up">
+                              <span class="section-tag">Explore Our Range</span>
+                              <h2 class="section-title">Shop By Category</h2>
+                              <p class="section-subtitle">Find the perfect furnishing for every corner of your home</p>
+                         </div>
+                         <div class="row g-3 g-md-4">
+                              <% products.categories.forEach((cat, index)=> { %>
+                                   <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up"
+                                        data-aos-delay="<%= index * 50 %>">
+                                        <a href="<%= cat.link %>" class="category-card">
+                                             <div class="category-image-wrapper">
+                                                  <img src="<%= cat.image %>"
+                                                       alt="<%= cat.name %> - Purple Leaf Creations"
+                                                       class="category-image" loading="lazy">
+                                                  <div class="category-overlay">
+                                                       <span class="category-explore">Explore Collection <i
+                                                                 class="bi bi-arrow-right"></i></span>
+                                                  </div>
+                                             </div>
+                                             <h3 class="category-name">
+                                                  <%= cat.name %>
+                                             </h3>
+                                        </a>
+                                   </div>
+                                   <% }); %>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== BEST SELLERS ========== -->
+               <section class="section-bestsellers" aria-label="Best Sellers">
+                    <div class="container">
+                         <div class="section-header text-center" data-aos="fade-up">
+                              <span class="section-tag">Customer Favorites</span>
+                              <h2 class="section-title">Best Sellers</h2>
+                              <p class="section-subtitle">Our most loved products, handpicked for you</p>
+                         </div>
+                         <div class="swiper bestseller-swiper" data-aos="fade-up" data-aos-delay="100">
+                              <div class="swiper-wrapper">
+                                   <% products.bestSellers.forEach(product=> { %>
+                                        <div class="swiper-slide">
+                                             <%- include('partials/product-card', { product: product }) %>
+                                        </div>
+                                        <% }); %>
+                              </div>
+                              <div class="swiper-pagination"></div>
+                         </div>
+                         <div class="text-center mt-4" data-aos="fade-up">
+                              <a href="#" class="btn btn-outline-purple">View All Best Sellers <i
+                                        class="bi bi-arrow-right"></i></a>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== PROMOTIONAL BANNER ========== -->
+               <section class="section-promo" aria-label="Promotional Banner">
+                    <div class="promo-banner"
+                         style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&h=600&fit=crop');">
+                         <div class="promo-overlay"></div>
+                         <div class="container">
+                              <div class="promo-content" data-aos="fade-up">
+                                   <span class="promo-tag">Refresh Your Space</span>
+                                   <h2 class="promo-title">Give Your Home A Fresh New Look</h2>
+                                   <p class="promo-text">Premium home furnishing for beautiful everyday spaces.</p>
+                                   <a href="#" class="btn btn-hero-primary">SHOP NOW</a>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== SOFA COVERS COLLECTION ========== -->
+               <section class="section-sofa" aria-label="Sofa Covers Collection">
+                    <div class="container">
+                         <div class="section-header" data-aos="fade-up">
+                              <div class="row align-items-end">
+                                   <div class="col-md-8">
+                                        <span class="section-tag">Sofa Collection</span>
+                                        <h2 class="section-title">Refresh Your Sofa</h2>
+                                        <p class="section-subtitle">Transform your living room with our premium sofa
+                                             covers</p>
+                                   </div>
+                                   <div class="col-md-4 text-md-end">
+                                        <a href="#" class="btn btn-outline-purple d-none d-md-inline-flex">View All <i
+                                                  class="bi bi-arrow-right"></i></a>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="row g-3 g-md-4">
+                              <% products.sofaCovers.forEach((product, index)=> { %>
+                                   <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up"
+                                        data-aos-delay="<%= index * 80 %>">
+                                        <%- include('partials/product-card', { product: product }) %>
+                                   </div>
+                                   <% }); %>
+                         </div>
+                         <div class="text-center mt-4 d-md-none" data-aos="fade-up">
+                              <a href="#" class="btn btn-outline-purple">View All Sofa Covers <i
+                                        class="bi bi-arrow-right"></i></a>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== 7D HOME CARPETS ========== -->
+               <section class="section-7d" aria-label="7D Home Carpets">
+                    <div class="lifestyle-banner"
+                         style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&h=700&fit=crop');">
+                         <div class="lifestyle-overlay"></div>
+                         <div class="container">
+                              <div class="row align-items-center min-vh-60">
+                                   <div class="col-lg-6" data-aos="fade-right">
+                                        <div class="lifestyle-content">
+                                             <span class="lifestyle-tag">Exclusive Collection</span>
+                                             <h2 class="lifestyle-title">Experience The Beauty Of 7D Home Carpets</h2>
+                                             <p class="lifestyle-text">Bring texture, warmth and character to your
+                                                  interiors with premium carpet designs. Our 7D carpets feature
+                                                  ultra-realistic patterns that add depth and dimension to any room.</p>
+                                             <ul class="lifestyle-features">
+                                                  <li><i class="bi bi-check-circle-fill"></i> Ultra-realistic 7D designs
+                                                  </li>
+                                                  <li><i class="bi bi-check-circle-fill"></i> Anti-slip backing</li>
+                                                  <li><i class="bi bi-check-circle-fill"></i> Easy to clean & maintain
+                                                  </li>
+                                                  <li><i class="bi bi-check-circle-fill"></i> Available in multiple
+                                                       sizes</li>
+                                             </ul>
+                                             <a href="#" class="btn btn-hero-primary">EXPLORE 7D CARPETS</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== NEW ARRIVALS ========== -->
+               <section class="section-new-arrivals" aria-label="New Arrivals">
+                    <div class="container">
+                         <div class="section-header text-center" data-aos="fade-up">
+                              <span class="section-tag">Just Landed</span>
+                              <h2 class="section-title">New Arrivals</h2>
+                              <p class="section-subtitle">Be the first to discover our latest designs</p>
+                         </div>
+                         <div class="swiper new-arrivals-swiper" data-aos="fade-up" data-aos-delay="100">
+                              <div class="swiper-wrapper">
+                                   <% products.newArrivals.forEach(product=> { %>
+                                        <div class="swiper-slide">
+                                             <%- include('partials/product-card', { product: product }) %>
+                                        </div>
+                                        <% }); %>
+                              </div>
+                              <div class="swiper-pagination"></div>
+                         </div>
+                         <div class="text-center mt-4" data-aos="fade-up">
+                              <a href="#" class="btn btn-outline-purple">View All New Arrivals <i
+                                        class="bi bi-arrow-right"></i></a>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== TABLE COLLECTION ========== -->
+               <section class="section-table" aria-label="Table Collection">
+                    <div class="container">
+                         <div class="section-header" data-aos="fade-up">
+                              <div class="row align-items-end">
+                                   <div class="col-md-8">
+                                        <span class="section-tag">Table Essentials</span>
+                                        <h2 class="section-title">Set The Table Beautifully</h2>
+                                        <p class="section-subtitle">Table covers, runners and dining collection for
+                                             elegant settings</p>
+                                   </div>
+                                   <div class="col-md-4 text-md-end">
+                                        <a href="#" class="btn btn-outline-purple d-none d-md-inline-flex">View All <i
+                                                  class="bi bi-arrow-right"></i></a>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="row g-3 g-md-4">
+                              <% products.tableCollection.forEach((product, index)=> { %>
+                                   <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up"
+                                        data-aos-delay="<%= index * 80 %>">
+                                        <%- include('partials/product-card', { product: product }) %>
+                                   </div>
+                                   <% }); %>
+                         </div>
+                         <div class="text-center mt-4 d-md-none" data-aos="fade-up">
+                              <a href="#" class="btn btn-outline-purple">View All Table Collection <i
+                                        class="bi bi-arrow-right"></i></a>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== WHY CHOOSE US ========== -->
+               <section class="section-why-us" aria-label="Why Choose Purple Leaf Creations">
+                    <div class="container">
+                         <div class="section-header text-center" data-aos="fade-up">
+                              <span class="section-tag">Our Promise</span>
+                              <h2 class="section-title">Why Choose Purple Leaf Creations</h2>
+                         </div>
+                         <div class="row g-4">
+                              <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="0">
+                                   <div class="feature-card">
+                                        <div class="feature-icon">
+                                             <i class="bi bi-gem"></i>
+                                        </div>
+                                        <h3 class="feature-title">Premium Quality</h3>
+                                        <p class="feature-text">Finest materials for lasting beauty</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="50">
+                                   <div class="feature-card">
+                                        <div class="feature-icon">
+                                             <i class="bi bi-palette"></i>
+                                        </div>
+                                        <h3 class="feature-title">Elegant Designs</h3>
+                                        <p class="feature-text">Curated styles for modern homes</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
+                                   <div class="feature-card">
+                                        <div class="feature-icon">
+                                             <i class="bi bi-shield-check"></i>
+                                        </div>
+                                        <h3 class="feature-title">Comfort & Durability</h3>
+                                        <p class="feature-text">Built to withstand everyday use</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="150">
+                                   <div class="feature-card">
+                                        <div class="feature-icon">
+                                             <i class="bi bi-droplet"></i>
+                                        </div>
+                                        <h3 class="feature-title">Easy Maintenance</h3>
+                                        <p class="feature-text">Simple care for busy lifestyles</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="0">
+                                   <div class="feature-card">
+                                        <div class="feature-icon">
+                                             <i class="bi bi-lock"></i>
+                                        </div>
+                                        <h3 class="feature-title">Secure Shopping</h3>
+                                        <p class="feature-text">Safe & encrypted transactions</p>
+                                   </div>
+                              </div>
+                              <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="50">
+                                   <div class="feature-card">
+                                        <div class="feature-icon">
+                                             <i class="bi bi-headset"></i>
+                                        </div>
+                                        <h3 class="feature-title">Customer Support</h3>
+                                        <p class="feature-text">We are here to help always</p>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== CUSTOMER REVIEWS ========== -->
+               <section class="section-reviews" aria-label="Customer Reviews">
+                    <div class="container">
+                         <div class="section-header text-center" data-aos="fade-up">
+                              <span class="section-tag">Testimonials</span>
+                              <h2 class="section-title">What Our Customers Say</h2>
+                              <p class="section-subtitle">Real experiences from our valued customers</p>
+                         </div>
+                         <div class="swiper reviews-swiper" data-aos="fade-up" data-aos-delay="100">
+                              <div class="swiper-wrapper">
+                                   <% products.reviews.forEach(review=> { %>
+                                        <div class="swiper-slide">
+                                             <div class="review-card">
+                                                  <div class="review-stars">
+                                                       <% for (let i=0; i < review.rating; i++) { %>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <% } %>
+                                                                 <% for (let i=review.rating; i < 5; i++) { %>
+                                                                      <i class="bi bi-star"></i>
+                                                                      <% } %>
+                                                  </div>
+                                                  <p class="review-text">"<%= review.text %>"</p>
+                                                  <div class="review-product">
+                                                       <i class="bi bi-bag-check"></i> Purchased: <%= review.product %>
+                                                  </div>
+                                                  <div class="review-author">
+                                                       <div class="review-avatar">
+                                                            <%= review.avatar %>
+                                                       </div>
+                                                       <div class="review-info">
+                                                            <strong class="review-name">
+                                                                 <%= review.name %>
+                                                            </strong>
+                                                            <span class="review-location"><i class="bi bi-geo-alt"></i>
+                                                                 <%= review.location %>
+                                                            </span>
+                                                       </div>
+                                                       <span class="verified-badge"><i
+                                                                 class="bi bi-patch-check-fill"></i> Verified</span>
+                                                  </div>
+                                                  <p class="review-demo-note">*Demo review for presentation purposes</p>
+                                             </div>
+                                        </div>
+                                        <% }); %>
+                              </div>
+                              <div class="swiper-pagination"></div>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== LIFESTYLE GALLERY ========== -->
+               <section class="section-gallery" aria-label="Lifestyle Gallery">
+                    <div class="container">
+                         <div class="section-header text-center" data-aos="fade-up">
+                              <span class="section-tag">Get Inspired</span>
+                              <h2 class="section-title">Lifestyle Gallery</h2>
+                              <p class="section-subtitle">Beautiful spaces styled with Purple Leaf Creations</p>
+                         </div>
+                         <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+                              <div class="gallery-item gallery-item-1">
+                                   <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&h=600&fit=crop"
+                                        alt="Elegant living room with premium sofa cover" loading="lazy">
+                                   <div class="gallery-overlay">
+                                        <span>Living Room</span>
+                                   </div>
+                              </div>
+                              <div class="gallery-item gallery-item-2">
+                                   <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=400&fit=crop"
+                                        alt="Bedroom with luxury carpet" loading="lazy">
+                                   <div class="gallery-overlay">
+                                        <span>Bedroom</span>
+                                   </div>
+                              </div>
+                              <div class="gallery-item gallery-item-3">
+                                   <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=600&fit=crop"
+                                        alt="Dining room with table cover" loading="lazy">
+                                   <div class="gallery-overlay">
+                                        <span>Dining Room</span>
+                                   </div>
+                              </div>
+                              <div class="gallery-item gallery-item-4">
+                                   <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=400&fit=crop"
+                                        alt="Modern home interior" loading="lazy">
+                                   <div class="gallery-overlay">
+                                        <span>Modern Interior</span>
+                                   </div>
+                              </div>
+                              <div class="gallery-item gallery-item-5">
+                                   <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=400&h=400&fit=crop"
+                                        alt="Cozy home furnishing" loading="lazy">
+                                   <div class="gallery-overlay">
+                                        <span>Cozy Spaces</span>
+                                   </div>
+                              </div>
+                              <div class="gallery-item gallery-item-6">
+                                   <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&h=600&fit=crop"
+                                        alt="Cushion covers on sofa" loading="lazy">
+                                   <div class="gallery-overlay">
+                                        <span>Decor Details</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+
+               <!-- ========== NEWSLETTER ========== -->
+               <section class="section-newsletter" aria-label="Newsletter">
+                    <div class="container">
+                         <div class="newsletter-wrapper" data-aos="fade-up">
+                              <div class="row align-items-center justify-content-center">
+                                   <div class="col-lg-8 text-center">
+                                        <span class="newsletter-tag"><i class="bi bi-envelope-heart"></i> Stay
+                                             Connected</span>
+                                        <h2 class="newsletter-title">Bring More Beauty Home</h2>
+                                        <p class="newsletter-text">Subscribe to our newsletter for exclusive offers, new
+                                             arrivals and home styling tips.</p>
+                                        <form class="newsletter-form">
+                                             <div class="input-group">
+                                                  <input type="email" class="form-control"
+                                                       placeholder="Enter your email address" aria-label="Email address"
+                                                       required>
+                                                  <button class="btn btn-purple" type="submit">Subscribe <i
+                                                            class="bi bi-arrow-right"></i></button>
+                                             </div>
+                                        </form>
+                                        <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.
+                                        </p>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+          </main>
+
+          <%- include('partials/footer') %>
